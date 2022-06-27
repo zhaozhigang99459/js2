@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            direction: none;
+        }
+
+        [class*=box] {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        li {
+            display: inline-block;
+            width: 90px;
+            height: 50px;
+            line-height: 50px;
+            background-color: orange;
+            cursor: pointer;
+            user-select: none;
+            box-sizing: border-box;
+            vertical-align: middle;
+        }
+
+        .box2,
+        .box3,
+        .box4,
+        .box5 {
+            background-color: green;
+        }
+
+        .active {
+            border: 2px solid blue;
+        }
+
+        div {
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active">新闻</li>
+        <li>娱乐</li>
+        <li>股票</li>
+        <li>头条</li>
+        <li>歌曲</li>
+    </ul>
+    <div class="box1 block">新闻</div>
+    <div class="box2">娱乐</div>
+    <div class="box3">股票</div>
+    <div class="box4">头条</div>
+    <div class="box5">歌曲</div>
+    </div>
+</body>
+<script>
+    var aa = document.querySelectorAll("li");
+    var bb = document.querySelectorAll("div");
+    console.log(aa);
+    console.log(bb);
+    for (let i = 0; i < aa.length; i++) {
+        /* console.log(i);
+        console.log(aa);
+        console.log(aa[i]); */
+        aa[i].onclick = function () {
+            document.querySelector(".active").classList.remove("active")
+            document.querySelector(".block").classList.remove("block")
+            console.log(i);
+            console.log(aa);
+            console.log(aa[i]);
+            aa[i].classList.add("active")
+            bb[i].classList.add("block")
+        }
+        // }
+    }
+</script>
+
+</html>
